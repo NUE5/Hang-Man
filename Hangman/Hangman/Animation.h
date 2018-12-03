@@ -2,6 +2,12 @@
 #include<SFML\Graphics.hpp>
 #include<SFML\Audio.hpp>
 #include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include<list>
+#include<stack>
+#include<time.h>
 class Animation
 {
 public:
@@ -22,6 +28,7 @@ public:
 	}
 	bool isSpriteClicked(sf::Sprite &sprite, sf::Vector2i mousepos);
 	bool isRectClicked(sf::RectangleShape &rect, sf::Vector2i mousepos);
+	std::string letterValue(int n);
 
 	Animation();
 	~Animation();

@@ -11,6 +11,7 @@ public:
 	bool isSpriteClicked(sf::Sprite &sprite, sf::Vector2i mousepos);
 	void updatespr(sf::Sprite &sprite,int n, sf::RenderWindow &window);
 	void reverse(sf::Sprite &sprite, int n, sf::RenderWindow &window);
+	std::string getCategory(int n);
 	~menu();
 	
 private:

@@ -5,8 +5,9 @@
 
 int main()
 {
+	srand(time(0));
 	bool start = false, choosen = false, play=false ; int choosn, no = 0;
-
+	std::string category, word;
 	sf::RenderWindow Main_window(sf::VideoMode(585,920), "Main Menu");
 	Player player(Main_window.getSize().x, Main_window.getSize().y);
 
@@ -74,6 +75,8 @@ int main()
 						if (choosen&&no==1)
 						{
 							menu1.updatespr(menu1.category[choosn].sprite1, choosn, Start_game);
+							category = menu1.getCategory(choosn);
+
 						}
 						if (choosen && menu1.category[7].isSpriteClicked(menu1.category[7].sprite1, mousepos))
 						{
@@ -91,6 +94,8 @@ int main()
 	//******************************************************************************************************************
 		if (play)
 		{
+			//std::cout << player.LoadWord(category) << std::endl;
+			word = player.LoadWord(category);
 			sf::RenderWindow Play(sf::VideoMode(585, 920), "Hangman");
 				while (Play.isOpen())
 				{
@@ -101,20 +106,23 @@ int main()
 						if (event3.type == sf::Event::Closed)
 							Play.close();
 						sf::Vector2i mouseposs = sf::Mouse::getPosition(Play);
-						if (event3.type == event3.MouseButtonPressed) {
-							
-								for (int i = 0; i < 26; i++) {
-						if (player.letters[0].isRectClicked(player.letters[i].rect1, mouseposs))
+						if (event3.type == event3.MouseButtonPressed) 
+						{
+								for (int i = 0; i < 26; i++)
+						        {
+						if (player.letters[i].isRectClicked(player.letters[i].rect1, mouseposs))
 								{
 									player.letters[i].rect1.setFillColor(sf::Color::Green);
 									std::cout << "clicked" << std::endl;
-								}
-							}
+									std::cout << player.letterValue(i) << std::endl;
+							    }
+						        }
 						}
 					}
+				
 					Play.display();
 					player.draw(Play);
-					//Play.clear();
+					player.drawText(word, Play);
 				
 			    }
 		}

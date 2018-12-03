@@ -21,6 +21,8 @@ Player::Player(float width, float height)
 		//letters[i].rect1.setOutlineColor(sf::Color::Black);
 		//letters[i].rect1.setOutlineThickness(2);
 	}
+
+	
 	
 	letters[0].rect1.setPosition(sf::Vector2f(x - 545,y - 300));
 	letters[1].rect1.setPosition(sf::Vector2f(x - 490,y - 300));
@@ -213,6 +215,8 @@ Player::Player(float width, float height)
 		letters[i].text.setFillColor(sf::Color::Black);
 	}
 
+
+
 }
 
 
@@ -228,5 +232,74 @@ void Player::draw(sf::RenderWindow & window)
 		window.draw(letters[i].rect1);
 		window.draw(letters[i].text);
     }
+}
+
+std::string Player::LoadWord(std::string category)
+{
+	int lines = 0;
+	std::vector<std::string>v;
+	std::string word;
+	std::ifstream file(category);
+	if (file.is_open())
+	{
+		while (std::getline(file, word))
+		
+			v.push_back(word);
+			int randomline = rand() % v.size();
+			std::cout << v.size() << std::endl;
+			/*if (randomline+1 == v.size())
+			{
+				randomline = 0;
+			}*/
+		std::cout << randomline;
+		word = v.at(randomline);
+		file.close();
+	}
+	return std::string(word);
+}
+
+std::string Player::letterValue(int &n)
+{
+	std::string c = letters[n].text.getString();
+	guessedletter = c;
+	//std::cout << guessedletter << std::endl;
+	return std::string(c);
+}
+
+void Player::drawText(const std::string &s,sf::RenderWindow &window)
+{
+	mustguessed = s;
+	int x, y;
+	y = 530;
+	x = 190 - mustguessed.length();
+	int xx= 585/ mustguessed.length();
+	xx += (xx / 2);
+	for (int i = 0; i < mustguessed.length(); i++)
+	{
+		Wordtoguess[i].rect1.setSize(sf::Vector2f(30, 7));
+		Wordtoguess[i].rect1.setFillColor(sf::Color::Black);
+		Wordtoguess[i].rect1.setPosition(sf::Vector2f(xx, y + 50));
+		xx += 40;
+		window.draw(Wordtoguess[i].rect1);
+	}
+	for (int i = 0; i < mustguessed.length(); i++)
+	{
+		t[i].text.setString(mustguessed[i]);
+		t[i].text.setFillColor(sf::Color::Black);
+		t[i].text.setCharacterSize(50);
+		t[i].text.setFont(font);
+		t[i].text.setPosition(sf::Vector2f(Wordtoguess[i].rect1.getPosition().x, Wordtoguess[i].rect1.getPosition().y-50));
+		//window.draw(t[i].text);
+	}
+	
+	for (int i = 0; i < s.length(); i++)
+	{
+		    std::string c;
+			c.push_back(mustguessed[i]);
+			if (c == guessedletter)
+				window.draw(t[i].text);
+	}
 	
 }
+
+

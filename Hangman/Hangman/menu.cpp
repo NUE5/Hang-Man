@@ -185,6 +185,7 @@ menu::menu(float width,float height)
 void menu::draw(sf::RenderWindow & window)
 {
 	window.draw(backsprite);
+	
 	for (int i = 0; i < 8; i++)
 	{
 		window.draw(category[i].sprite1);
@@ -192,28 +193,34 @@ void menu::draw(sf::RenderWindow & window)
 
 	}
 
-}/*
-bool menu::isSpriteClicked(sf::Sprite &sprite , sf::Vector2i mousepos)
-{
-	sf::Vector2f ms(mousepos);
-	if (sprite.getGlobalBounds().contains(ms))
-	{
-		return true;
-	}
-	return false;
 }
-
-*/
-
 void menu::updatespr(sf::Sprite & sprite,int n,sf::RenderWindow &window)
 {
 	category[n].sprite1.setTexture(texture2);
-	
 }
 
 void menu::reverse(sf::Sprite & sprite, int n, sf::RenderWindow & window)
 {
 	category[n].sprite1.setTexture(category[n].texture);
+}
+
+std::string menu::getCategory(int n)
+{
+	std::string catg;
+	if (n == 1)
+		catg = "Food.txt";
+	else if (n == 2)
+		catg = "Movies.txt";
+	else if (n == 3)
+		catg = "Technology.txt";
+	else if (n == 4)
+		catg = "Country.txt";
+	else if (n == 5)
+		catg = "Shopping.txt";
+	else if (n == 6)
+		catg = "Random.txt";
+
+		return std::string(catg);
 }
 
 menu::~menu()

@@ -41,3 +41,5 @@ bool Animation::isRectClicked(sf::RectangleShape &rect, sf::Vector2i mousepos)
 	}
 	return false;
 }
+
+
