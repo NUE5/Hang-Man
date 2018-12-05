@@ -4,7 +4,7 @@
 
 Player::Player(float width, float height)
 {
-	if (!font.loadFromFile("fonts/SNAP____.ttf"))
+	if (!font.loadFromFile("fonts/constanb.ttf"))
 	{
 		//error
 	}
@@ -17,9 +17,9 @@ Player::Player(float width, float height)
 	for (int i=0; i < 27; i++)
 	{
 		letters[i].rect1.setSize(sf::Vector2f(45,45));
-		letters[i].rect1.setFillColor(sf::Color::Transparent);
-		//letters[i].rect1.setOutlineColor(sf::Color::Black);
-		//letters[i].rect1.setOutlineThickness(2);
+		letters[i].rect1.setFillColor(sf::Color::White);
+		letters[i].rect1.setOutlineColor(sf::Color::Black);
+		letters[i].rect1.setOutlineThickness(2);
 	}
 
 	
@@ -56,166 +56,137 @@ Player::Player(float width, float height)
 	letters[0].text.setString("A");
 	letters[0].text.setCharacterSize(40);
 	letters[0].text.setPosition(sf::Vector2f(x - 545, y - 305));
-//	letters[0].text.setFillColor(sf::Color::Blue);
 	letters[0].text.setFont(font);
 
 	letters[1].text.setString("B");
 	letters[1].text.setCharacterSize(40);
 	letters[1].text.setPosition(sf::Vector2f(x - 485, y - 305));
-//	letters[1].text.setFillColor(sf::Color::Blue);
 	letters[1].text.setFont(font);
 
 	letters[2].text.setString("C");
 	letters[2].text.setCharacterSize(40);
 	letters[2].text.setPosition(sf::Vector2f(x - 425, y - 305));
-//	letters[2].text.setFillColor(sf::Color::Blue);
 	letters[2].text.setFont(font);
 
 	letters[3].text.setString("D");
 	letters[3].text.setCharacterSize(40);
 	letters[3].text.setPosition(sf::Vector2f(x - 365, y - 305)); 
-//	letters[3].text.setFillColor(sf::Color::Blue);
 	letters[3].text.setFont(font);
 
 	letters[4].text.setString("E");
 	letters[4].text.setCharacterSize(40);
 	letters[4].text.setPosition(sf::Vector2f(x - 305, y - 305));
-//	letters[4].text.setFillColor(sf::Color::Blue);
 	letters[4].text.setFont(font);
 
 	letters[5].text.setString("F");
 	letters[5].text.setCharacterSize(40);
 	letters[5].text.setPosition(sf::Vector2f(x - 245, y - 305));
-//	letters[5].text.setFillColor(sf::Color::Blue);
 	letters[5].text.setFont(font);
 
 	letters[6].text.setString("G");
 	letters[6].text.setCharacterSize(40);
 	letters[6].text.setPosition(sf::Vector2f(x - 185, y - 305));
-//	letters[6].text.setFillColor(sf::Color::Blue);
 	letters[6].text.setFont(font);
 
 	letters[7].text.setString("H");
 	letters[7].text.setCharacterSize(40);
 	letters[7].text.setPosition(sf::Vector2f(x - 125, y - 305));
-//	letters[7].text.setFillColor(sf::Color::Blue);
 	letters[7].text.setFont(font);
 
 	letters[8].text.setString("I");
 	letters[8].text.setCharacterSize(40);
 	letters[8].text.setPosition(sf::Vector2f(x - 65, y - 305));
-//	letters[8].text.setFillColor(sf::Color::Blue);
 	letters[8].text.setFont(font);
 
 	letters[9].text.setString("J");
 	letters[9].text.setCharacterSize(40);
 	letters[9].text.setPosition(sf::Vector2f(x - 545, y -235));
-//	letters[9].text.setFillColor(sf::Color::Blue);
 	letters[9].text.setFont(font);
 
 	letters[10].text.setString("K");
 	letters[10].text.setCharacterSize(40);
 	letters[10].text.setPosition(sf::Vector2f(x - 485, y - 235));
-//	letters[10].text.setFillColor(sf::Color::Blue);
 	letters[10].text.setFont(font);
 
 	letters[11].text.setString("L");
 	letters[11].text.setCharacterSize(40);
 	letters[11].text.setPosition(sf::Vector2f(x - 425, y - 235));
-//	letters[11].text.setFillColor(sf::Color::Blue);
 	letters[11].text.setFont(font);
 
 	letters[12].text.setString("M");
 	letters[12].text.setCharacterSize(40);
 	letters[12].text.setPosition(sf::Vector2f(x - 370, y - 235));
-//	letters[12].text.setFillColor(sf::Color::Blue);
 	letters[12].text.setFont(font);
 
 	letters[13].text.setString("N");
 	letters[13].text.setCharacterSize(40);
 	letters[13].text.setPosition(sf::Vector2f(x - 310, y - 235));
-//	letters[13].text.setFillColor(sf::Color::Blue);
 	letters[13].text.setFont(font);
 
 	letters[14].text.setString("O");
 	letters[14].text.setCharacterSize(40);
 	letters[14].text.setPosition(sf::Vector2f(x - 245, y - 235));
-//	letters[14].text.setFillColor(sf::Color::Blue);
 	letters[14].text.setFont(font);
 
 	letters[15].text.setString("P");
 	letters[15].text.setCharacterSize(40);
 	letters[15].text.setPosition(sf::Vector2f(x - 185, y - 235));
-//	letters[15].text.setFillColor(sf::Color::Blue);
 	letters[15].text.setFont(font);
 
 	letters[16].text.setString("Q");
 	letters[16].text.setCharacterSize(40);
 	letters[16].text.setPosition(sf::Vector2f(x - 125, y - 235));
-//	letters[16].text.setFillColor(sf::Color::Blue);
 	letters[16].text.setFont(font);
 
 	letters[17].text.setString("R");
 	letters[17].text.setCharacterSize(40);
 	letters[17].text.setPosition(sf::Vector2f(x - 65, y - 235));
-//	letters[17].text.setFillColor(sf::Color::Blue);
 	letters[17].text.setFont(font);
 
 	letters[18].text.setString("S");
 	letters[18].text.setCharacterSize(40);
 	letters[18].text.setPosition(sf::Vector2f(x - 545, y - 165));
-//	letters[18].text.setFillColor(sf::Color::Blue);
 	letters[18].text.setFont(font);
 
 	letters[19].text.setString("T");
 	letters[19].text.setCharacterSize(40);
 	letters[19].text.setPosition(sf::Vector2f(x - 485, y - 165));
-//	letters[19].text.setFillColor(sf::Color::Blue);
 	letters[19].text.setFont(font);
 
 	letters[20].text.setString("U");
 	letters[20].text.setCharacterSize(40);
 	letters[20].text.setPosition(sf::Vector2f(x - 425, y - 165));
-//	letters[20].text.setFillColor(sf::Color::Blue);
 	letters[20].text.setFont(font);
 
 	letters[21].text.setString("V");
 	letters[21].text.setCharacterSize(40);
 	letters[21].text.setPosition(sf::Vector2f(x - 365, y - 165));
-//	letters[21].text.setFillColor(sf::Color::Blue);
 	letters[21].text.setFont(font);
 
 	letters[22].text.setString("W");
 	letters[22].text.setCharacterSize(40);
 	letters[22].text.setPosition(sf::Vector2f(x - 310, y - 165));
-//	letters[22].text.setFillColor(sf::Color::Blue);
 	letters[22].text.setFont(font);
 
 	letters[23].text.setString("X");
 	letters[23].text.setCharacterSize(40);
 	letters[23].text.setPosition(sf::Vector2f(x - 245, y - 165));
-//	letters[23].text.setFillColor(sf::Color::Blue);
 	letters[23].text.setFont(font);
 
 	letters[24].text.setString("Y");
 	letters[24].text.setCharacterSize(40);
 	letters[24].text.setPosition(sf::Vector2f(x - 185, y - 165));
-//	letters[24].text.setFillColor(sf::Color::Blue);
 	letters[24].text.setFont(font);
 
 	letters[25].text.setString("Z");
 	letters[25].text.setCharacterSize(40);
 	letters[25].text.setPosition(sf::Vector2f(x - 125, y - 165));
-//	letters[25].text.setFillColor(sf::Color::Blue);
 	letters[25].text.setFont(font);
 
 	for (int i = 0; i < 26; i++)
 	{
-
 		letters[i].text.setFillColor(sf::Color::Black);
 	}
-
-
 
 }
 
@@ -246,11 +217,6 @@ std::string Player::LoadWord(std::string category)
 		
 			v.push_back(word);
 			int randomline = rand() % v.size();
-			std::cout << v.size() << std::endl;
-			/*if (randomline+1 == v.size())
-			{
-				randomline = 0;
-			}*/
 		std::cout << randomline;
 		word = v.at(randomline);
 		file.close();
@@ -262,44 +228,45 @@ std::string Player::letterValue(int &n)
 {
 	std::string c = letters[n].text.getString();
 	guessedletter = c;
-	//std::cout << guessedletter << std::endl;
 	return std::string(c);
 }
 
+
 void Player::drawText(const std::string &s,sf::RenderWindow &window)
 {
-	mustguessed = s;
+	
 	int x, y;
 	y = 530;
-	x = 190 - mustguessed.length();
-	int xx= 585/ mustguessed.length();
+	x = 190 - s.length();
+	int xx= 585/ s.length();
 	xx += (xx / 2);
-	for (int i = 0; i < mustguessed.length(); i++)
+	for (int i = 0; i < s.length(); i++)
 	{
-		Wordtoguess[i].rect1.setSize(sf::Vector2f(30, 7));
+		Wordtoguess[i].rect1.setSize(sf::Vector2f(30, 5));
 		Wordtoguess[i].rect1.setFillColor(sf::Color::Black);
 		Wordtoguess[i].rect1.setPosition(sf::Vector2f(xx, y + 50));
 		xx += 40;
 		window.draw(Wordtoguess[i].rect1);
 	}
-	for (int i = 0; i < mustguessed.length(); i++)
+	for (int i = 0; i < s.length(); i++)
 	{
-		t[i].text.setString(mustguessed[i]);
+		t[i].text.setString(s[i]);
 		t[i].text.setFillColor(sf::Color::Black);
 		t[i].text.setCharacterSize(50);
 		t[i].text.setFont(font);
 		t[i].text.setPosition(sf::Vector2f(Wordtoguess[i].rect1.getPosition().x, Wordtoguess[i].rect1.getPosition().y-50));
-		//window.draw(t[i].text);
+		if (b[i]) {
+			window.draw(t[i].text);
+		}
 	}
-	
 	for (int i = 0; i < s.length(); i++)
 	{
-		    std::string c;
-			c.push_back(mustguessed[i]);
-			if (c == guessedletter)
-				window.draw(t[i].text);
+		std::string c;
+		c.push_back(s[i]);
+		if (c == guessedletter) {
+			b[i] = true;
+		}
 	}
-	
 }
 
 

@@ -94,7 +94,6 @@ int main()
 	//******************************************************************************************************************
 		if (play)
 		{
-			//std::cout << player.LoadWord(category) << std::endl;
 			word = player.LoadWord(category);
 			sf::RenderWindow Play(sf::VideoMode(585, 920), "Hangman");
 				while (Play.isOpen())
@@ -108,15 +107,31 @@ int main()
 						sf::Vector2i mouseposs = sf::Mouse::getPosition(Play);
 						if (event3.type == event3.MouseButtonPressed) 
 						{
-								for (int i = 0; i < 26; i++)
-						        {
-						if (player.letters[i].isRectClicked(player.letters[i].rect1, mouseposs))
+							for (int i = 0; i < 26; i++)
+							{
+								if (player.letters[i].isRectClicked(player.letters[i].rect1, mouseposs))
 								{
-									player.letters[i].rect1.setFillColor(sf::Color::Green);
-									std::cout << "clicked" << std::endl;
-									std::cout << player.letterValue(i) << std::endl;
-							    }
-						        }
+									player.letterValue(i);
+								}
+							}
+							for (int i = 0; i < 26; i++) {
+							for (int j = 0; j < word.length(); j++)
+							{
+							std::string c;
+							c.push_back(word[j]);
+							
+						
+							if (player.letters[i].isRectClicked(player.letters[i].rect1, mouseposs) && player.letters[i].text.getString()==c)
+							{
+								player.letters[i].rect1.setFillColor(sf::Color::Green);
+								break;
+							}
+							}
+							if (player.letters[i].isRectClicked(player.letters[i].rect1, mouseposs) && player.letters[i].rect1.getFillColor()!=sf::Color::Green)
+							{
+								player.letters[i].rect1.setFillColor(sf::Color::Red);
+							}
+						    }
 						}
 					}
 				

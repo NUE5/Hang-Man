@@ -20,6 +20,7 @@ public:
 	sf::Texture texture;
 	sf::Text text;
 	sf::Font font;
+	bool statement;
 	int x, y;
 	Animation(int x, int y)
 	{

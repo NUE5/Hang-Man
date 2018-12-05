@@ -15,7 +15,7 @@ Animation::Animation()
 	sprite1.setPosition(sf::Vector2f(0, 100));
 	sprite2.setPosition(sf::Vector2f(0, 100));
 	sprite3.setPosition(sf::Vector2f(0, 100));
-
+	statement = false;
 }
 
 
