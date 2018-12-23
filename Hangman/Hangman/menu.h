@@ -13,7 +13,11 @@ public:
 	void reverse(sf::Sprite &sprite, int n, sf::RenderWindow &window);
 	std::string getCategory(int n);
 	~menu();
-	
+	Animation inword;
+	sf::String input;
+	sf::Text text;
+	sf::Text message;
+	sf::RectangleShape wordrect;
 private:
 	
 	sf::Texture background;

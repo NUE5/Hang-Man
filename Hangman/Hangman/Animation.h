@@ -7,6 +7,7 @@
 #include<vector>
 #include<list>
 #include<stack>
+#include<set>
 #include<time.h>
 class Animation
 {
@@ -20,6 +21,8 @@ public:
 	sf::Texture texture;
 	sf::Text text;
 	sf::Font font;
+	sf::Font font2;
+
 	bool statement;
 	int x, y;
 	Animation(int x, int y)

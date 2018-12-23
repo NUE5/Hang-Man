@@ -9,21 +9,27 @@ public:
 	Animation letters[30];
 	Animation Wordtoguess[100];
 	Animation t[20];
-	
+	Animation categ;
+	Animation limit;
+	sf::RectangleShape grect;
+
 	Player(float width, float height);
 	~Player();
 	void draw(sf::RenderWindow &window);
 	std::string LoadWord(std::string category);
-	void drawText(const std::string &s,sf::RenderWindow &window);
-	std::string letterValue(int &n);
 	
+	void drawLevel1(const std::string &s,sf::RenderWindow &window);
+	
+	std::string letterValue(int &n);
 	
 private:
 	
-	std::string guessedletter;
+	std::string guessedletter, categstr;
 	sf::Texture background;
 	sf::Sprite backsprite;
-	sf::Texture texture2;
-	bool b[30] = { false };
+	sf::Texture texture;
+	sf::Font font2;
+	bool b[30] = { false }, bb[30] = { true };
+	std::set<char> wordLength;
 };
 
