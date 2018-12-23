@@ -110,6 +110,7 @@ int main()
 
 		if (play)
 		{
+			std::cout << word << std::endl;
 			if (!menu1.input.isEmpty())
 			{
 				word = menu1.input;;
@@ -179,9 +180,13 @@ int main()
 						std::cout << "YOU WIN";
 					}
 				}
+				
 				Level1.display();
+				
 				player.draw(Level1);
+				player.drawH(Level1, error);
 				player.drawLevel1(word, Level1);
+				
 			}
 		
 		}

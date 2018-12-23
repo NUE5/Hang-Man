@@ -221,6 +221,22 @@ Player::Player(float width, float height)
 	grect.setFillColor(sf::Color::Transparent);
 	grect.setOutlineColor(sf::Color::Black);
 
+
+	//HANGMAN*******************************************************
+	hang[0].texture.loadFromFile("images/HangMan (1).png");
+	hang[1].texture.loadFromFile("images/HangMan (2).png");
+	hang[2].texture.loadFromFile("images/HangMan (3).png");
+	hang[3].texture.loadFromFile("images/HangMan (4).png");
+	hang[4].texture.loadFromFile("images/HangMan (5).png");
+	hang[5].texture.loadFromFile("images/HangMan (6).png");
+	hang[6].texture.loadFromFile("images/HangMan (7).png");
+	hang[7].texture.loadFromFile("images/HangMan (8).png");
+	hang[8].texture.loadFromFile("images/HangMan (9).png");
+	for (int i = 0; i < 9; i++) {
+		hang[i].sprite1.setTexture(hang[i].texture);
+		hang[i].sprite1.setPosition(sf::Vector2f(0, 0));
+	}
+
 }
 
 
@@ -242,6 +258,12 @@ void Player::draw(sf::RenderWindow & window)
 		window.draw(letters[i].text);
     }
 
+}
+
+void Player::drawH(sf::RenderWindow & window, int i)
+{
+
+	window.draw(hang[i].sprite1);
 }
 
 std::string Player::LoadWord(std::string category)
@@ -336,6 +358,7 @@ void Player::drawLevel1(const std::string &s,sf::RenderWindow &window)
 	}
 
 }
+
 
 
 

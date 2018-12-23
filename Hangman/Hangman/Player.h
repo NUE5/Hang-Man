@@ -11,6 +11,7 @@ public:
 	Animation t[20];
 	Animation categ;
 	Animation limit;
+	Animation hang[10];
 	sf::RectangleShape grect;
 
 	Player(float width, float height);
@@ -19,7 +20,7 @@ public:
 	std::string LoadWord(std::string category);
 	
 	void drawLevel1(const std::string &s,sf::RenderWindow &window);
-	
+	void drawH(sf::RenderWindow &window, int x);
 	std::string letterValue(int &n);
 	
 private:
@@ -29,6 +30,7 @@ private:
 	sf::Sprite backsprite;
 	sf::Texture texture;
 	sf::Font font2;
+
 	bool b[30] = { false }, bb[30] = { true };
 	std::set<char> wordLength;
 };
