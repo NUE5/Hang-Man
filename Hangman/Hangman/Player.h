@@ -5,7 +5,7 @@ class Player :
 	public Animation
 {
 public:
-	int x=585, y=920;
+	int x=565, y=600;
 	Animation letters[30];
 	Animation Wordtoguess[100];
 	Animation t[20];
@@ -14,7 +14,7 @@ public:
 	Animation hang[10];
 	sf::RectangleShape grect;
 
-	Player(float width, float height);
+	Player();
 	~Player();
 	void draw(sf::RenderWindow &window);
 	std::string LoadWord(std::string category);

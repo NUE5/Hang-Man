@@ -2,13 +2,17 @@
 
 
 
-Final::Final(float width, float height)
+Final::Final()
 {
-	if (!wintexture.loadFromFile("images/main.png"))
+	if (!wintexture.loadFromFile("images/win.png"))
 	{
 		//error
 	}
-	if (!pAgain.loadFromFile("images/button6.png"))
+	if (!losetexture.loadFromFile("images/lose.png"))
+	{
+		//error
+	}
+	if (!pAgain.loadFromFile("images/playagainbutton.png"))
 	{
 		//error
 	}
@@ -21,29 +25,25 @@ Final::Final(float width, float height)
 		std::cout << "Error\n";
 	}
 
-	sf::IntRect pArect(0, 0, 321, 128);
+	sf::IntRect pArect(0, 0, 200, 96);
 	Again.sprite1.setTexture(pAgain);
 	Again.sprite1.setTextureRect(pArect);
-	Again.sprite1.setPosition(sf::Vector2f(160,520));
-	Again.text.setPosition(sf::Vector2f(200, 550));
+	Again.sprite1.setPosition(sf::Vector2f(190,750));
+	Again.text.setPosition(sf::Vector2f(220, 780));
 	Again.text.setString("PLAY AGAIN");
 	Again.text.setFont(font);
 	Again.text.setFillColor(sf::Color::Black);
-	Again.text.setCharacterSize(35);
+	Again.text.setCharacterSize(25);
 	
 
+	win.sprite1.setTexture(wintexture);
+	win.sprite1.scale(sf::Vector2f(1,0.85));
+	win.sprite1.setPosition(sf::Vector2f(0, 0));
 
-	win.text.setFont(font);
-	win.text.setFillColor(sf::Color::Yellow);
-	win.text.setString("YOU WIN");
-	win.text.setCharacterSize(60);
-	win.text.setPosition(sf::Vector2f(120, 420));
+	lose.sprite1.setTexture(losetexture);
+	lose.sprite1.scale(sf::Vector2f(1, 0.85));
+	lose.sprite1.setPosition(sf::Vector2f(0, 0));
 
-	lose.text.setFont(font);
-	lose.text.setFillColor(sf::Color::Yellow);
-	lose.text.setString("YOU LOSE");
-	lose.text.setCharacterSize(60);
-	lose.text.setPosition(sf::Vector2f(120, 420));
 
 }	  
 
@@ -54,14 +54,16 @@ Final::~Final()
 
 void Final::drawWin(sf::RenderWindow & window)
 {
+
+	window.draw(win.sprite1);
 	window.draw(Again.sprite1);
 	window.draw(Again.text);
-	window.draw(win.text);
 }
 
 void Final::drawLose(sf::RenderWindow & window)
 {
+	
+	window.draw(lose.sprite1);
 	window.draw(Again.sprite1);
 	window.draw(Again.text);
-	window.draw(lose.text);
 }

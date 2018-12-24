@@ -4,7 +4,7 @@ class Final :
 	public Animation
 {
 public:
-	Final(float width , float height);
+	Final();
 	~Final();
 
 	void drawWin(sf::RenderWindow &window);
