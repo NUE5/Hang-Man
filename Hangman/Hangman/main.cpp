@@ -42,7 +42,7 @@ jump:
 				if (event.mouseButton.button == sf::Mouse::Left&&event.mouseButton.x > 229 && event.mouseButton.x < 372 && event.mouseButton.y>575 && event.mouseButton.y < 733)
 				{
 					start = true;
-					std::cout << mousepos.x << ' ' << mousepos.y << std::endl;
+					
 					Main_window.close();
 				}
 
@@ -68,7 +68,7 @@ jump:
 					if (event2.text.unicode != 8)
 						menu1.input += (char)event2.text.unicode;
 					menu1.text.setString(menu1.input);
-					std::cout << "ASCII character typed: " << static_cast<char>(event2.text.unicode) << std::endl;
+					//std::cout << "ASCII character typed: " << static_cast<char>(event2.text.unicode) << std::endl;
 				}
 				sf::Vector2i mousepos = sf::Mouse::getPosition(Start_game);
 				if (event2.type == event2.MouseButtonPressed)
@@ -93,7 +93,7 @@ jump:
 					}
 					if ((choosen && menu1.category[7].isSpriteClicked(menu1.category[7].sprite1, mousepos)) || (!menu1.input.isEmpty() && menu1.category[7].isSpriteClicked(menu1.category[7].sprite1, mousepos)))
 					{
-						std::cout << "clicked" << std::endl;
+						//std::cout << "clicked" << std::endl;
 						play = true;
 						Start_game.close();
 					}
@@ -132,7 +132,7 @@ jump:
 		{
 
 			sf::Event event3;
-			//std::cout << "x = " << event3.mouseMove.x << "y = " << event3.mouseMove.y << std::endl;
+			
 			while (Level1.pollEvent(event3))
 			{
 
@@ -173,13 +173,13 @@ jump:
 				{
 					lose = true;
 					Level1.close();
-					std::cout << "YOU LOSE";
+					//std::cout << "YOU LOSE";
 				}
 				if (chances == wLength)
 				{
 					won = true;
 					Level1.close();
-					std::cout << "YOU WIN";
+					//std::cout << "YOU WIN";
 				}
 			}
 
@@ -195,7 +195,7 @@ jump:
 
 	if (won)
 	{
-		sf::RenderWindow window(sf::VideoMode(585, 920), "YOU_WIN");
+		sf::RenderWindow window(sf::VideoMode(900,600), "YOU_WIN");
 		while (window.isOpen())
 		{
 			sf::Event event;
@@ -216,14 +216,25 @@ jump:
 	}
 	if (lose)
 	{
-		sf::RenderWindow window(sf::VideoMode(585, 920), "YOU_LOSE");
+		sf::RenderWindow window(sf::VideoMode(900,600), "YOU_LOSE");
 		while (window.isOpen())
 		{
 			sf::Event event;
+			
 			while (window.pollEvent(event))
 			{
 				if (event.type == sf::Event::Closed)
 					window.close();
+				sf::Vector2i mousepos = sf::Mouse::getPosition(window);
+				if (event.type == event.MouseButtonPressed)
+				{
+					if (event.mouseButton.button == sf::Mouse::Left)
+					{
+					//	std::cout << mousepos.x << ' ' << mousepos.y << std::endl;
+					}
+
+				}
+
 				sf::Vector2i mouseposs = sf::Mouse::getPosition(window);
 				if (event.type == event.MouseButtonPressed)
 				{

@@ -8,7 +8,7 @@ Player::Player()
 	{
 		//error
 	}
-	if (!background.loadFromFile("images/background2.png"))
+	if (!background.loadFromFile("images/background3.png"))
 	{
 		//error
 	}
@@ -244,6 +244,45 @@ Player::~Player()
 {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void Player::draw(sf::RenderWindow & window)
 {

@@ -12,6 +12,7 @@ public:
 	void updatespr(sf::Sprite &sprite,int n, sf::RenderWindow &window);
 	void reverse(sf::Sprite &sprite, int n, sf::RenderWindow &window);
 	std::string getCategory(int n);
+
 	~menu();
 	Animation inword;
 	sf::String input;
@@ -23,6 +24,5 @@ private:
 	sf::Texture background;
 	sf::Sprite backsprite;
 	sf::Texture texture2;
-	//std::vector<sf::Texture> texture[10];
 };
 

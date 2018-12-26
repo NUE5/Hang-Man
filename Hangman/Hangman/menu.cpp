@@ -5,7 +5,7 @@
 menu::menu(float width,float height)
 {
 	
-	if (!background.loadFromFile("images/background1.png"))
+	if (!background.loadFromFile("images/background0.png"))
 	{
 		//error
 	}

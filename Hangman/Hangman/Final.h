@@ -15,7 +15,11 @@ public:
 	
 private:
 	sf::Texture wintexture;
+	sf::Texture wintexture2;
+
 	sf::Texture losetexture;
+	sf::Texture losetexture2;
+
 	sf::Texture pAgain;
 	
 
